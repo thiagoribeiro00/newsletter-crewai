@@ -20,9 +20,9 @@ class NewsletterGenCrew:
     tasks_config = "config/tasks.yaml"
 
     def llm(self):
-        llm = ChatAnthropic(model_name="claude-3-sonnet-20240229", max_tokens=4096)
+        # llm = ChatAnthropic(model_name="claude-3-sonnet-20240229", max_tokens=4096)
         # llm = ChatGroq(model="llama3-70b-8192")
-        # llm = ChatGroq(model="mixtral-8x7b-32768")
+        llm = ChatGroq(model="mixtral-8x7b-32768")
         # llm = ChatGoogleGenerativeAI(google_api_key=os.getenv("GOOGLE_API_KEY"))
 
         return llm

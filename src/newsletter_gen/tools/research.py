@@ -3,6 +3,7 @@ from exa_py import Exa
 import os
 from datetime import datetime, timedelta
 
+os.environ["EXA_API_KEY"] = "717ddd93-f010-4dc2-9918-5e99a4bdcac6"
 
 class SearchAndContents(BaseTool):
     name: str = "Search and Contents Tool"

@@ -1,11 +1,29 @@
 import streamlit as st
 from newsletter_gen.crew import NewsletterGenCrew
+import chardet
 
 
 class NewsletterGenUI:
 
+    def check_utf8(file_path):
+        try:
+            # Tenta abrir o arquivo com codificação UTF-8
+            with open(file_path, "r", encoding="utf-8") as file:
+                file.read()
+            return True  # Se não ocorrer exceção, o arquivo está em UTF-8
+        except UnicodeDecodeError:
+            return False  # Se ocorrer erro, o arquivo não está em UTF-8
+
+    # Caminho para o seu arquivo
+    file_path = r"C:\Users\Thiago Ribeiro\Documents\Codigos\exa-crewai\src\newsletter_gen\config\newsletter_template.html"
+
+    if check_utf8(file_path):
+        print("O arquivo está codificado em UTF-8.")
+    else:
+        print("O arquivo NÃO está codificado em UTF-8.")
+
     def load_html_template(self):
-        with open("src/newsletter_gen/config/newsletter_template.html", "r") as file:
+        with open(r"C:\Users\Thiago Ribeiro\Documents\Codigos\exa-crewai\src\newsletter_gen\config\newsletter_template.html", "r") as file:
             html_template = file.read()
 
         return html_template

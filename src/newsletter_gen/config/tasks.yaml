@@ -11,7 +11,7 @@ research_task:
     - Include a minimum of 7 news articles and a maximum of 10 news articles in the list.
     - When using the Search Tool, your search query should be concise (for example, "latest news on {topic}").
 
-    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: When using tools, DO NOT ESCAPE the underscore character "_", EVER. If you need to use a tool and pass in a parameter called 'search_query', you should write 'search_query', not 'search\_query'. THIS IS VERY IMPORTANT, else the tool will not work.
+    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: When using tools, DO NOT ESCAPE the underscore character "_", EVER. If you need to use a tool and pass in a parameter called 'search_query', you should write 'search_query', not 'search_query'. THIS IS VERY IMPORTANT, else the tool will not work.
 
   expected_output: >
     A markdown document with the most relevant news stories. Each news story should contain the following:
@@ -39,7 +39,7 @@ edit_task:
     - Verify that the URLs are correct and that they lead to the correct news article. They should lead to a news article and not to a list of articles or the front page of a website. If the URL is incorrect, ask the researcher to provide the correct URL.
     - Do not search for additional news articles or change the content of the news articles. Only edit the existing news articles.
 
-    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: When using tools, DO NOT ESCAPE the underscore character "_", EVER. If you need to use a tool and pass in a parameter called 'search_query', you should write 'search_query', not 'search\_query'. THIS IS VERY IMPORTANT, else the tool will not work.
+    IMPORTANT INSTRUCTIONS ABOUT USING TOOLS: When using tools, DO NOT ESCAPE the underscore character "_", EVER. If you need to use a tool and pass in a parameter called 'search_query', you should write 'search_query', not 'search_query'. THIS IS VERY IMPORTANT, else the tool will not work.
 
   expected_output: >
     A markdown document with all the news to be included in the newsletter of the week. The document should have a title related to the curated stories of the week and a list of news articles.
