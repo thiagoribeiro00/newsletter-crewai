@@ -1,57 +1,80 @@
-# NewsletterGen Crew with GUI
+# Newsletter Generator AI
 
-Welcome to the NewsletterGen Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+O **Newsletter Generator AI** é uma aplicação que utiliza inteligência artificial para gerar boletins informativos (newsletters) de maneira automatizada, personalizando o conteúdo com base em temas e mensagens fornecidas pelo usuário. A aplicação integra diferentes agentes de IA, cada um com uma função específica, como pesquisa de conteúdo, edição de texto e formatação de newsletters em HTML.
 
-## Installation
+O objetivo principal do projeto é simplificar o processo de criação de newsletters, tornando-o mais eficiente e personalizado, através da colaboração de várias ferramentas baseadas em IA. O sistema realiza a busca de conteúdos relevantes, edita o texto conforme as necessidades do usuário e formata a saída em um arquivo HTML pronto para distribuição.
 
-Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [Poetry](https://python-poetry.org/) for dependency management and package handling, offering a seamless setup and execution experience.
+## Funcionalidade
 
-First, if you haven't already, install Poetry:
+O sistema funciona em três etapas principais:
+
+1. **Pesquisa de Conteúdo**: Através de um agente de pesquisa, são recuperados conteúdos relacionados ao tema fornecido, com um foco em artigos recentes (última semana).
+2. **Edição de Conteúdo**: O conteúdo pesquisado é refinado e adaptado para se alinhar à mensagem e ao tom desejados pelo usuário.
+3. **Formatação e Geração de Newsletter**: Um agente designer cria um layout HTML personalizado com base nas informações fornecidas e no conteúdo editado, gerando o arquivo final da newsletter.
+
+## Tecnologias e Ferramentas Utilizadas
+
+O projeto faz uso de várias tecnologias e ferramentas para garantir um fluxo de trabalho eficiente e a geração automatizada de newsletters:
+
+### 1. **CrewAI**
+- **Função no Projeto**: Utilizada para organizar os agentes de IA e orquestrar o fluxo de trabalho.
+
+### 2. **LangChain**
+- **Função no Projeto**: Usado para integrar agentes como o **ChatAnthropic**, **ChatGroq**, **ChatGoogleGenerativeAI** e outros, permitindo interações entre eles para realizar as tarefas de pesquisa, edição e formatação.
+
+### 3. **Streamlit**
+- **Função no Projeto**: Utilizado para a interface do usuário, permitindo aos usuários inserir dados, visualizar o progresso e fazer o download das newsletters geradas.
+
+### 4. **Exa API**
+- **Função no Projeto**: Usada para obter conteúdos relacionados ao tema da newsletter a partir de fontes externas.
+
+### 5. **Python**
+- **Função no Projeto**: A linguagem principal para desenvolvimento de todo o sistema, incluindo a lógica de orquestração dos agentes e o gerenciamento do fluxo de trabalho.
+
+### 6. **Exa Py**
+- **Função no Projeto**: Facilitando a integração com a Exa API para buscar artigos relacionados ao tópico da newsletter.
+
+## Estrutura do Projeto
+
+- **`newsletter_gen/`**: Contém o código principal do sistema, incluindo a definição dos agentes e das ferramentas de IA.
+- **`config/`**: Armazena arquivos de configuração, como templates de newsletter e a configuração de agentes.
+- **`logs/`**: Armazena os logs gerados durante a execução das tarefas.
+- **`src/`**: Contém scripts auxiliares para carregar templates e executar funções relacionadas à geração de newsletters.
+
+
+## Instalação
+
+Certifique-se de ter Python >=3.10 <=3.13 instalado em seu sistema. Este projeto usa [Poetry](https://python-poetry.org/) para gerenciamento de dependências e manipulação de pacotes, oferecendo uma experiência perfeita de configuração e execução.
+
+Primeiro, se ainda não o fez, instale o Poetry:
 
 ```bash
 pip install poetry
 ```
 
-Next, navigate to your project directory and install the dependencies:
+Em seguida, navegue até o diretório do seu projeto e instale as dependências:
 
-1. First lock the dependencies and then install them:
+1. Primeiro bloqueie as dependências e depois instale-as:
 ```bash
 poetry lock
 ```
 ```bash
 poetry install
 ```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/newsletter_gen/config/agents.yaml` to define your agents
-- Modify `src/newsletter_gen/config/tasks.yaml` to define your tasks
-- Modify `src/newsletter_gen/crew.py` to add your own logic, tools and specific args
-- Modify `src/newsletter_gen/main.py` to add custom inputs for your agents and tasks
-
 ## Running the Project
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+Para iniciar sua equipe de agentes de IA e iniciar a execução de tarefas, execute isto na pasta raiz do seu projeto:
 
 ```bash
 poetry run newsletter_gen
 ```
 
-This command initializes the newsletter-gen Crew, assembling the agents and assigning them tasks as defined in your configuration.
+Este comando inicializa o Crew newsletter-gen, montando os agentes e atribuindo-lhes tarefas conforme definido em sua configuração.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folser
+Este exemplo, não modificado, irá executar a criação de um arquivo `report.md` com a saída de uma pesquisa sobre LLMs no folser raiz
 
-## Understanding Your Crew
+## Compreendendo seus agentes
 
-The newsletter-gen Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+A equipe da geração de boletins informativos é composta por vários agentes de IA, cada um com funções, objetivos e ferramentas exclusivos. Esses agentes colaboram em uma série de tarefas, definidas em `config/tasks.yaml`, aproveitando suas habilidades coletivas para atingir objetivos complexos. O arquivo `config/agents.yaml` descreve as capacidades e configurações de cada agente da sua equipe.
 
-## Support
 
-For support, questions, or feedback regarding the NewsletterGen Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Joing our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat wtih our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
